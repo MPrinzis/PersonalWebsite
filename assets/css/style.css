@@ -1,0 +1,237 @@
+:root {
+    --accent-green: #11ee77;
+    --clear-green: #aaffcc;
+    --dark-green: #00d060;
+    --accent-blue: #0055ff;
+    --clear-blue: #99bbff;
+    --darkest-basic: #011e41;
+    --dark-basic: #21364e;
+    --ligth-basic: #ced3dc;
+    --clear-basic: #ededed;
+    --clearest-basic: #fafafa;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+} 
+
+section, article, aside, footer, header, nav {  
+	display: block;
+}
+
+/* Navbar start*/
+header {
+    height:  120px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+
+    color: var(--darkest-basic);
+    background: rgba(237, 237, 237, 0.25);
+    border-bottom: 2px solid #D9D9D9;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    
+    z-index: 100;
+    transition: 0.5s;
+}
+header.sticky {
+    height: 80px;
+    background: rgba(237, 237, 237, 0.5);
+}
+
+header a{
+    color: var(--darkest-basic);
+    text-decoration: none;
+}
+
+header .main-logo a{
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+
+/* navbar links to other pages */
+header .navbar {
+    font-weight: 500;
+}
+
+.navbar li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.navbar li:hover{
+    text-decoration: underline;
+}
+
+.hamburger{
+    display: none;
+}
+
+/* header responsiveness */
+@media (max-width:800px) {    
+        /* navbar links to other pages */
+        header .navbar {
+            position: absolute;
+            top: 100%; right: 0; left: 0;
+            background: rgba(237, 237, 237, 0.25);
+            border-bottom: 3px solid #D9D9D9;
+            padding: 10px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(-300%);
+            transition: all .5s ease;
+        }
+
+        .navbar li {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: auto;
+        }
+        
+
+        .navbar.active{
+            transform: translateY(0%);
+        }
+        /* end navbar */
+
+
+        /* hamburger with final status */
+        header .hamburger {
+            width: 45px;
+            cursor: pointer;
+            position: relative;
+            display: block;
+        }
+        .hamburger span {
+            width: 100%;
+            height: 5px;
+            display: block;
+            background-color: var(--darkest-basic);
+            transition: all .2s;
+            margin: 10px 0;
+            border-radius: 20px;
+        }
+
+        .hamburger .third {
+            display: inline-flexbox;
+            width: 75%;
+        }
+
+        .hamburger .fourth {
+            display: inline;
+            background-color: var(--accent-green);
+            width: 15%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .hamburger .fourth.active, .second.active  {
+            display: none;
+        }
+
+        .hamburger .first.active {
+            transform: rotate(45deg) translateY(10px);
+        }
+        .hamburger .third.active {
+            width: 100%;
+            transform: rotate(-45deg) translateY(-10px);
+        }
+        /* end hamburger menu */
+}
+
+
+.sticky-logo{
+    position: fixed;
+    height: 90px;
+    width: 90px;
+    bottom: 20px; right: 20px;
+    border-radius: 50px;
+    background: var(--dark-basic);
+}
+
+.sticky-logo .circle{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 5px;
+    top: 5px;
+    border-radius: 50px;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+    transform: rotate(0deg);
+    }
+    to {
+    transform: rotate(360deg);
+    }
+} 
+
+.sticky-logo .svg{
+    fill: var(--accent-green);
+}
+
+.sticky-logo .logo {
+    color: var(--clearest-basic);
+    font-size: 1.5em;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#gotop-logo.animation{
+    animation: sticky-logo-animation 5s linear infinite alternate-reverse;
+}
+
+.sticky-logo .arrow i{
+    color: var(--clearest-basic);
+    height: 100%;
+    width: 100%;
+    font-size: 1.8em;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0%;
+}
+#gotop-arrow.animation i{
+    animation: sticky-logo-animation 5s linear infinite alternate;
+}
+
+
+@keyframes sticky-logo-animation {
+    100% {
+        opacity: 100%;
+    }
+    50% {
+        opacity: 0%;
+    }
+    0% {
+        opacity: 0%;
+    }
+} 
+
+
+
+
+body {
+    background-color: #99bbff;
+    min-height: 300vh;
+}
