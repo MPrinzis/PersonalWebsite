@@ -57,6 +57,37 @@ header .main-logo a{
     font-weight: 700;
 }
 
+header .main-logo span {
+    font-size: 2rem;
+    font-weight: 700;
+}
+header.sticky .main-logo span {
+    animation: main-logo-animation .5s forwards;
+    animation-iteration-count: 1;
+}
+
+@media (max-width:1024px){
+    header .main-logo span {
+        animation: main-logo-animation .5s forwards;
+        animation-iteration-count: 1;
+    }
+}
+
+@keyframes main-logo-animation {
+    0% {
+        display: block;
+        opacity: 100%;
+    }
+    80% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0;
+        position: absolute;
+        transform: translateY(-200%);
+    }
+}
+
 
 /* navbar links to other pages */
 header .navbar {
@@ -151,8 +182,10 @@ header .navbar {
         }
         /* end hamburger menu */
 }
+/* end header section */
 
 
+/* sticky goTop logo  button*/
 .sticky-logo{
     position: fixed;
     height: 90px;
@@ -215,7 +248,6 @@ header .navbar {
     animation: sticky-logo-animation 5s linear infinite alternate;
 }
 
-
 @keyframes sticky-logo-animation {
     100% {
         opacity: 100%;
@@ -227,11 +259,19 @@ header .navbar {
         opacity: 0%;
     }
 } 
-
+/* end goTop sticky button */
 
 
 
 body {
-    background-color: #99bbff;
-    min-height: 300vh;
+    min-height: 200vh;
+}
+
+
+
+
+
+
+.contact{
+    background-color: var(--accent-blue);
 }

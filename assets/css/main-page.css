@@ -1,0 +1,16 @@
+.main-container .page {
+    height: 100vh;
+    width: 100%;
+}
+
+.main-container .first{
+    background-color: var(--clear-blue);
+}
+
+.main-container .second{
+    background-color: var(--darkest-basic);
+}
+
+.main-container .third{
+    background-color: var(--accent-green);
+}
