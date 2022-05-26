@@ -4,13 +4,14 @@
 }
 
 .main-container .first{
-    background-color: var(--clear-blue);
+    /* background: var(--clear-blue); */
+    padding: auto;
 }
 
 .main-container .second{
-    background-color: var(--darkest-basic);
+    background: var(--darkest-basic);
 }
 
 .main-container .third{
-    background-color: var(--accent-green);
+    padding: auto;
 }

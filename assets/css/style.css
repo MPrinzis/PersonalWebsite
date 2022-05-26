@@ -4,6 +4,7 @@
     --dark-green: #00d060;
     --accent-blue: #0055ff;
     --clear-blue: #99bbff;
+    --dark-blue: #0041C2;
     --darkest-basic: #011e41;
     --dark-basic: #21364e;
     --ligth-basic: #ced3dc;
@@ -32,13 +33,11 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
-
     color: var(--darkest-basic);
     background: rgba(237, 237, 237, 0.25);
     border-bottom: 2px solid #D9D9D9;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    
     z-index: 100;
     transition: 0.5s;
 }
@@ -193,6 +192,7 @@ header .navbar {
     bottom: 20px; right: 20px;
     border-radius: 50px;
     background: var(--dark-basic);
+    z-index: 90;
 }
 
 .sticky-logo .circle{
@@ -263,8 +263,12 @@ header .navbar {
 
 
 
+
+
+
 body {
     min-height: 200vh;
+    background-color: var(--clearest-basic);
 }
 
 
@@ -272,6 +276,68 @@ body {
 
 
 
-.contact{
-    background-color: var(--accent-blue);
+
+
+
+
+/* contact page */
+.contact {
+    height: 100vh;
+    background-color: var(--dark-blue);
+    padding: 3% 10% 100px;
+    color: var(--clear-blue);
+    position: relative;
 }
+
+.contact a{
+    color: var(--clear-blue);
+    text-decoration: none;
+}
+.contact a:hover{
+    /* color: var(--accent-green); */
+    text-decoration: underline;
+}
+
+.contact h2 {
+    font-size: 4em;
+    margin-top: 5vh;
+}
+
+.contact h3 {
+    font-size: 1.2rem;
+    margin-top: 2vh;
+}
+
+.contact .social {
+    margin: 10vh 0;
+
+}
+.social i {
+    margin-bottom: 2vh;
+    padding-right: 10px;
+    font-size: 1.5rem;
+}
+
+
+.contact .rigths {
+    border-top: 3px solid var(--clear-blue);
+    background: var(--dark-blue);
+    border-radius: 3px;
+    text-align: center;
+    position: absolute; bottom: 10px;
+}
+
+.rigths p {
+    width: 80vw;
+    min-height: 70px;
+    padding: 20px;    
+}
+
+
+@media (max-width:850px) {
+    .contact h2 {
+        font-size: 3.5rem;
+    }
+}
+
+/* end contact page*/
