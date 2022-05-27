@@ -18,17 +18,45 @@
     hamburgerToggle.addEventListener('click', toggleMenu);
 
     // sticky navbar on scroll
+    const header = document.querySelector("header");
     window.addEventListener("scroll",function(){
-        var header = document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0)
+        header.classList.toggle("sticky", window.scrollY > 0)    
     })
 
-
+    // goTop animation start on scroll
+    const goTopLogo = document.getElementById("gotop-logo");
+    const goTopArrow = document.getElementById("gotop-arrow");
+        const stickyLogo = document.getElementById("sticky-logo");
     window.addEventListener("scroll",function(){
-        var goTopLogo = document.getElementById("gotop-logo");
         goTopLogo.classList.toggle("animation", window.scrollY > 0)
-    })
-    window.addEventListener("scroll",function(){
-        var goTopArrow = document.getElementById("gotop-arrow");
         goTopArrow.classList.toggle("animation", window.scrollY > 0)
     })
+
+    // hidden navbar on contact section
+    const sections = document.querySelectorAll("section"); 
+    const options = {   threshold: "0.5",   };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                if (e.target.id == "contact") {
+                    header.classList.add("hidden");
+                    navbar.classList.remove('active');
+                    layers.forEach((layer) => layer.classList.remove("active"))
+                    stickyLogo.classList.add("invert");
+                }
+                else {
+                    header.classList.remove("hidden");
+                    stickyLogo.classList.remove("invert");
+                }
+            }
+        });
+    }, options);
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+
+
+

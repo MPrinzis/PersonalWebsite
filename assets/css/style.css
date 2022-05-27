@@ -20,6 +20,10 @@
     font-size: 24px;
 } 
 
+html {
+    scroll-behavior: smooth;
+}
+
 section, article, aside, footer, header, nav {  
 	display: block;
 }
@@ -46,6 +50,11 @@ header.sticky {
     background: rgba(237, 237, 237, 0.5);
 }
 
+header.hidden {
+    transform: translateY(-150%);
+}
+
+
 header a{
     color: var(--darkest-basic);
     text-decoration: none;
@@ -61,13 +70,13 @@ header .main-logo span {
     font-weight: 700;
 }
 header.sticky .main-logo span {
-    animation: main-logo-animation .5s forwards;
+    animation: main-logo-animation 1s forwards;
     animation-iteration-count: 1;
 }
 
 @media (max-width:1024px){
     header .main-logo span {
-        animation: main-logo-animation .5s forwards;
+        animation: main-logo-animation 1s forwards;
         animation-iteration-count: 1;
     }
 }
@@ -202,7 +211,7 @@ header .navbar {
     left: 5px;
     top: 5px;
     border-radius: 50px;
-    animation: rotate 20s linear infinite;
+    animation: rotate 20s .3s linear infinite;
 }
 
 @keyframes rotate {
@@ -259,6 +268,20 @@ header .navbar {
         opacity: 0%;
     }
 } 
+
+.sticky-logo.invert{
+    background: var(--clearest-basic);
+}
+.sticky-logo.invert .svg {
+    fill: var(--accent-blue);
+}
+.sticky-logo.invert .logo {
+    color: var(--accent-green);
+}
+.sticky-logo.invert .arrow i {
+    color: var(--accent-green);
+}
+
 /* end goTop sticky button */
 
 
@@ -268,8 +291,8 @@ header .navbar {
 
 body {
     min-height: 200vh;
-    background-color: var(--clearest-basic);
 }
+
 
 
 
@@ -310,12 +333,34 @@ body {
 
 .contact .social {
     margin: 10vh 0;
-
+    z-index: 100;
 }
 .social i {
     margin-bottom: 2vh;
     padding-right: 10px;
     font-size: 1.5rem;
+}
+
+.decorative.square {
+    width: 100px;
+    height: 60vh;
+    background: var(--accent-blue);
+    position: absolute;
+    right: 0;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}
+.decorative.square .line {
+    position: relative;
+    top: 10%;
+    display: block;
+    width: 130%;
+    height: 3px;
+    background: var(--clear-blue);
+    border-radius: 50px;
+    transform: rotate(30deg) translateX(-30px);
 }
 
 
@@ -332,11 +377,29 @@ body {
     min-height: 70px;
     padding: 20px;    
 }
+@media (max-width:460px){
+    .decorative.square {
+        display: none;
+    }
+    .rigths p {
+        min-height: 50px;
+        padding: 10px;    
+        font-size: .7rem;
+    }
+}
 
 
 @media (max-width:850px) {
     .contact h2 {
         font-size: 3.5rem;
+    }
+}
+
+@media (max-height:620px) {
+    .rigths p {
+        min-height: 50px;
+        padding: 10px;    
+        font-size: .7rem;
     }
 }
 

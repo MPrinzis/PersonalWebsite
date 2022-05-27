@@ -1,17 +1,33 @@
-.main-container .page {
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+.main-container {
     height: 100vh;
     width: 100%;
 }
 
-.main-container .first{
-    /* background: var(--clear-blue); */
+.main-container .page {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.page.first{
+    background: var(--clear-blue);
     padding: auto;
 }
 
-.main-container .second{
+.page.second{
     background: var(--darkest-basic);
 }
 
-.main-container .third{
+.page.third{
     padding: auto;
 }
