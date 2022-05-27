@@ -1,3 +1,17 @@
+:root {
+    --accent-green: #11ee77;
+    --clear-green: #aaffcc;
+    --dark-green: #00d060;
+    --accent-blue: #0055ff;
+    --clear-blue: #99bbff;
+    --dark-blue: #0041C2;
+    --darkest-basic: #011e41;
+    --dark-basic: #21364e;
+    --ligth-basic: #ced3dc;
+    --clear-basic: #ededed;
+    --clearest-basic: #fafafa;
+}
+
 html {
     scroll-snap-type: y mandatory;
 }
@@ -19,15 +33,85 @@ body {
     position: relative;
 }
 
-.page.first{
-    background: var(--clear-blue);
-    padding: auto;
+.page.first {  
+    color: var(--darkest-basic);
+    padding: 120px 10% 0;
 }
 
-.page.second{
+.page.first .text {
+    border: 2px solid salmon;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50vw;
+    height: 100%;
+    margin: auto 0;
+}
+
+.page.first h1{
+    padding: auto;
+    margin-top: 20px;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+.page.first h1 em {
+    font-size: 2.5rem;
+    font-style: normal;
+}
+
+.page.first h1 strong {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.page.first h2{
+    padding: auto;
+    margin-top: 20px;
+    width: 40vw;
+    font-size: 1.3rem;
+    font-weight: 400;
+    position: relative;
+}
+.page.first h2 em {
+    font-size: 1.3rem;
+    font-style: normal;
+    font-family: 'Philosopher', sans-serif;
+    white-space: nowrap;
+}
+.page.first h2 em::before {
+    content: ' ';
+    height: .8em;
+    width: 190px;
+    background-color: var(--accent-green);
+    display: inline-block;
+    position: absolute;
+    transform: translate(5px, 14px);
+    mix-blend-mode: darken;
+}
+
+.page.first button{
+    padding: 15px 40px;
+    margin-top: 30px;
+    border-radius: 3px;
+    border: none;
+    background: var(--accent-blue);
+    color: var(--clearest-basic);
+    font-family: 'Philosopher', sans-serif;
+    font-size: 1.2rem;
+}
+.page.first button:hover {
+    background: var(--dark-blue);
+}
+
+.page.second {
     background: var(--darkest-basic);
+    padding: 80px 10% 0;
+    color: var(--clear-basic);
 }
 
-.page.third{
-    padding: auto;
+.page.third {    
+    color: var(--darkest-basic);
+    padding: 80px 10% 0;
+}
+.page.third img{
+    width: 90%;
 }

@@ -38,16 +38,16 @@ header {
     align-items: center;
     padding: 30px 10%;
     color: var(--darkest-basic);
-    background: rgba(237, 237, 237, 0.25);
+    background: rgba(237, 237, 237, 0.5);
     border-bottom: 2px solid #D9D9D9;
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);
     z-index: 100;
     transition: 0.5s;
 }
 header.sticky {
     height: 80px;
-    background: rgba(237, 237, 237, 0.5);
+    background: rgba(237, 237, 237, .7);
 }
 
 header.hidden {
@@ -122,7 +122,7 @@ header .navbar {
         header .navbar {
             position: absolute;
             top: 100%; right: 0; left: 0;
-            background: rgba(237, 237, 237, 0.25);
+            background: rgba(237, 237, 237, 0.70);
             border-bottom: 3px solid #D9D9D9;
             padding: 10px 30px;
             display: flex;
