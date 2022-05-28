@@ -33,26 +33,27 @@ body {
     position: relative;
 }
 
+
+/* hero section start */
 .page.first {  
     color: var(--darkest-basic);
-    padding: 120px 10% 0;
+    padding: 0 10%;
+    overflow: hidden;
 }
 
 .page.first .text {
-    border: 2px solid salmon;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
-    width: 50vw;
+    min-width: 100%;
     height: 100%;
-    margin: auto 0;
+    padding: 140px 0 40%;
 }
 
 .page.first h1{
-    padding: auto;
-    margin-top: 20px;
     font-size: 2.5rem;
     font-weight: 300;
+    position: relative;
 }
 .page.first h1 em {
     font-size: 2.5rem;
@@ -64,12 +65,12 @@ body {
     font-weight: 600;
 }
 .page.first h2{
-    padding: auto;
-    margin-top: 20px;
     width: 40vw;
+    min-width: 350px;
     font-size: 1.3rem;
     font-weight: 400;
     position: relative;
+    margin-top: 3%;
 }
 .page.first h2 em {
     font-size: 1.3rem;
@@ -90,18 +91,158 @@ body {
 
 .page.first button{
     padding: 15px 40px;
-    margin-top: 30px;
+    width: fit-content;
+    margin-top: 5%;
     border-radius: 3px;
     border: none;
     background: var(--accent-blue);
     color: var(--clearest-basic);
     font-family: 'Philosopher', sans-serif;
     font-size: 1.2rem;
+    position: relative;
 }
 .page.first button:hover {
     background: var(--dark-blue);
 }
 
+@media (max-width:500px), (max-height:600px){
+    .page.first h1{
+        font-size: 2.2rem;
+    }
+    .page.first h1 em {
+        font-size: 2.2rem;
+    }
+    .page.first h1 strong{
+        font-size: 2.2rem;
+    }
+    .page.first h2 {
+        font-size: 1rem;
+        width: 90%;
+        margin-top: 5%;
+    }
+    .page.first h2 em {
+        font-size: 1rem;
+    }
+    .page.first h2 em::before {
+        width: 145px;
+        transform: translateY(13px)
+    }
+    .page.first button {
+        padding: 12px 30px;
+        font-size: 1rem;
+        margin-top: 7%;
+    }
+}
+
+
+/*  first page (hero section) decoration */
+
+.hero-decoration .circle {
+    position: absolute;
+    border-radius: 50%;
+}
+.hero-decoration .circle.green {
+    height: 50vh;    max-height: 600px;
+    width: 35vw;     max-width: 500px;
+    background: var(--accent-green);
+    top: 0;
+    left: 0;
+    filter: blur(200px);
+}
+.hero-decoration .circle.blue {
+    height: 70vh;    max-height: 800px;
+    width: 50vw;     max-width: 1000px;
+    background: var(--accent-blue);
+    bottom: -10vh;
+    right: -5vw;
+    filter: blur(220px);
+}
+
+.hero-decoration .curvedline svg{
+    position: absolute;
+    top: 0; margin-top: 130px;
+    right: -10px;
+    transition: all .5s;
+    max-width: 50vw;
+}
+@media (max-width:800px) {
+    .hero-decoration .curvedline svg{
+        right: -30px;
+        transform: scale(0.9);
+    }
+}
+@media (max-width:720px) {
+    .hero-decoration .circle.green {
+        filter: blur(120px);
+    }
+    .hero-decoration .circle.blue {
+        filter: blur(140px);
+        transform: translate(5vw, 5vh);
+    }
+    .hero-decoration .curvedline svg {
+        right: -50px;
+        transform: scale(0.8);
+    }
+    .hero-decoration .curvedline svg path:nth-child(4), path:nth-child(5){
+        display: none;
+    }
+}
+
+.hero-decoration .square {
+    min-width: 250px;    width: 100%;    max-width: 20vw;
+    min-height: 70px;     height: 8vh;
+    background: var(--clear-green);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5.5%;
+}
+
+.hero-decoration .square .line {
+    position: relative;
+    display: block;
+    background-color: var(--accent-green);
+    border-radius: 50px;
+    width: 3px;
+    height: 100%;
+    transform: rotate(30deg) translateY(-20px);
+}
+@media (max-height:660px) {
+    .hero-decoration .square{
+        display: none;
+    }
+}
+.hero-decoration .portrait {
+    position: absolute;
+    width: 90vw;
+    height: 100vh;
+    border: 2px dashed black;
+    
+}
+.hero-decoration .photo-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 90vh;
+    border: 2px dashed hotpink;
+}
+.hero-decoration .photo {
+    height: 100%; 
+    transform: translate(-70px, 5vh);
+}
+.hero-decoration .silohuette {
+    position: absolute;
+    border: 2px dashed slateblue;
+    opacity: .1;
+}
+
+
+
+
+/* second section start */
 .page.second {
     background: var(--darkest-basic);
     padding: 80px 10% 0;

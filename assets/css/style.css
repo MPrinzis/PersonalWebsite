@@ -341,7 +341,7 @@ body {
     font-size: 1.5rem;
 }
 
-.decorative.square {
+.contact .decoration.square {
     width: 100px;
     height: 60vh;
     background: var(--accent-blue);
@@ -352,12 +352,12 @@ body {
     flex-direction: column;
     gap: 5%;
 }
-.decorative.square .line {
+.contact .decoration.square .line {
     position: relative;
-    top: 10%;
     display: block;
     width: 130%;
     height: 3px;
+    top: 10%;
     background: var(--clear-blue);
     border-radius: 50px;
     transform: rotate(30deg) translateX(-30px);
@@ -378,7 +378,7 @@ body {
     padding: 20px;    
 }
 @media (max-width:460px){
-    .decorative.square {
+    .contact .decoration.square {
         display: none;
     }
     .rigths p {
