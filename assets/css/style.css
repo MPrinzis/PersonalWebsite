@@ -38,10 +38,10 @@ header {
     align-items: center;
     padding: 30px 10%;
     color: var(--darkest-basic);
-    background: rgba(237, 237, 237, 0.5);
+    background: rgba(237, 237, 237, 0.3);
     border-bottom: 2px solid #D9D9D9;
     -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(10px);
     z-index: 100;
     transition: 0.5s;
 }
@@ -292,14 +292,6 @@ header .navbar {
 body {
     min-height: 200vh;
 }
-
-
-
-
-
-
-
-
 
 
 
