@@ -7,7 +7,7 @@
     --dark-blue: #0041C2;
     --darkest-basic: #011e41;
     --dark-basic: #21364e;
-    --ligth-basic: #ced3dc;
+    --light-basic: #ced3dc;
     --clear-basic: #ededed;
     --clearest-basic: #fafafa;
 }
@@ -38,16 +38,28 @@ header {
     align-items: center;
     padding: 30px 10%;
     color: var(--darkest-basic);
-    background: rgba(237, 237, 237, 0.3);
+    background: rgba(250, 250, 250, 0.1);
     border-bottom: 2px solid #D9D9D9;
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(10px);
     z-index: 100;
-    transition: 0.5s;
+    transition: .5s;
 }
+header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 90;
+}
+header > * {
+    z-index: 95;
+}
+
 header.sticky {
     height: 80px;
-    background: rgba(237, 237, 237, .7);
+    background: rgba(250, 250, 250, .5);
 }
 
 header.hidden {
@@ -103,13 +115,33 @@ header .navbar {
 }
 
 .navbar li {
+    position: relative;
     list-style: none;
     display: inline-block;
     margin-left: 2rem;
 }
 
-.navbar li:hover{
-    text-decoration: underline;
+.navbar a::before{
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 10%;
+    bottom: 0; left: 0;
+    border-radius: 5px;
+    background-color: var(--clear-green);
+    mix-blend-mode: darken;
+    transition: .3s;
+    transform: translate(-10%, -5%);
+}
+.navbar a:hover::before{
+    width: 110%;
+    height: 110%;
+    border-radius: 0;
+    background-color: var(--accent-green);
+    transform: translate(-5%, 10%);
+}
+.navbar a:focus::before{
+    background-color: var(--dark-green);
 }
 
 .hamburger{
@@ -122,24 +154,39 @@ header .navbar {
         header .navbar {
             position: absolute;
             top: 100%; right: 0; left: 0;
-            background: rgba(237, 237, 237, 0.70);
+            background: rgba(250, 250, 250, .35);
             border-bottom: 3px solid #D9D9D9;
+            color: #fafafa;
             padding: 10px 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             transform: translateY(-300%);
-            transition: all .5s ease;
+            transition: all .4s ease;
+            z-index: 85;
         }
+        header .navbar::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+            z-index: 75;
+        }
+        header .navbar > * {
+            z-index: 80;
+        }
+        
 
         .navbar li {
             display: flex;
             align-items: center;
             padding: 15px;
             margin: auto;
+            z-index: 85;
         }
         
-
         .navbar.active{
             transform: translateY(0%);
         }
@@ -300,27 +347,72 @@ body {
     height: 100vh;
     background-color: var(--dark-blue);
     padding: 3% 10% 100px;
-    color: var(--clear-blue);
+    color: var(--light-basic);
     position: relative;
+}
+.contact .links {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    flex-direction: column;
 }
 
 .contact a{
-    color: var(--clear-blue);
+    position: relative;
+    color: var(--light-basic);
     text-decoration: none;
+    width: auto;
+    display: inline-block;
 }
-.contact a:hover{
-    /* color: var(--accent-green); */
-    text-decoration: underline;
+.contact h2::before, h3::before{
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 10%;
+    border-radius: 10px;
+    background-color: var(--clear-blue);
+    transform: translate(0%, 10%);
+    mix-blend-mode: lighten;
+}
+.contact h2:hover::before{
+    animation: contact-links .4s linear forwards;
+}
+.contact h3:hover::before{
+    animation: contact-links .3s linear forwards;
+}
+
+@keyframes contact-links {
+    0%{
+        width: 0%;
+    }
+    50%{
+        background-color: var(--clear-blue);
+        width: 100%;
+        height: 10%;
+    }
+    100%{
+        background-color: var(--accent-blue);
+        width: 100%;
+        height: 90%;
+        border-radius: 0;
+    }
+}
+
+.contact a:focus h2,
+.contact a:focus h3{
+    color: var(--clear-blue);
 }
 
 .contact h2 {
     font-size: 4em;
     margin-top: 5vh;
+    width: fit-content;
 }
 
 .contact h3 {
     font-size: 1.2rem;
     margin-top: 2vh;
+    width: fit-content;
 }
 
 .contact .social {
@@ -331,6 +423,14 @@ body {
     margin-bottom: 2vh;
     padding-right: 10px;
     font-size: 1.5rem;
+}
+.social a:hover i,
+.social a:hover{
+    color: var(--clear-blue);
+}
+.social a:focus i,
+.social a:focus{
+    color: var(--accent-blue);
 }
 
 .contact .decoration.square {
