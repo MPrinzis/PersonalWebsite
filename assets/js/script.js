@@ -35,7 +35,7 @@
     // hidden navbar on contact section
     const sections = document.querySelectorAll("section"); 
     const options = {   threshold: "0.5",   };
-
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
             if (e.isIntersecting) {

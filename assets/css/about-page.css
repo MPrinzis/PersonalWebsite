@@ -1,0 +1,9 @@
+section{
+    padding: 200px 10%;
+}
+
+#sardinia-outline path{
+    fill: none;
+    stroke: var(--accent-green);
+    stroke-width: 3px;
+}

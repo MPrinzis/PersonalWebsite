@@ -121,27 +121,35 @@ header .navbar {
     margin-left: 2rem;
 }
 
-.navbar a::before{
-    content: '';
-    position: absolute;
-    width: 20%;
-    height: 10%;
-    bottom: 0; left: 0;
-    border-radius: 5px;
-    background-color: var(--clear-green);
-    mix-blend-mode: darken;
-    transition: .3s;
-    transform: translate(-10%, -5%);
-}
-.navbar a:hover::before{
-    width: 110%;
-    height: 110%;
-    border-radius: 0;
-    background-color: var(--accent-green);
-    transform: translate(-5%, 10%);
-}
-.navbar a:focus::before{
-    background-color: var(--dark-green);
+@media (min-width:800px) {
+    .navbar a::before{
+        content: '';
+        position: absolute;
+        width: 20%;
+        height: 10%;
+        bottom: 0; left: 0;
+        border-radius: 5px;
+        background-color: var(--clear-green);
+        mix-blend-mode: darken;
+        transition: .3s;
+        transform: translate(-10%, -5%);
+    }
+    .navbar a.active:before{
+        background-color: var(--accent-green);
+        width: 50%;
+        transform: translate(-5%, -5%);
+    }
+    .navbar a:hover::before{
+        width: 110%;
+        height: 110%;
+        border-radius: 0;
+        background-color: var(--accent-green);
+        transform: translate(-5%, 10%);
+    }
+    .navbar a:focus::before{
+        background-color: var(--dark-green);
+    }
+    
 }
 
 .hamburger{
