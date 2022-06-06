@@ -1,9 +1,179 @@
-section{
-    padding: 200px 10%;
+:root {
+    --accent-green: #11ee77;
+    --clear-green: #aaffcc;
+    --dark-green: #00d060;
+    --accent-blue: #0055ff;
+    --clear-blue: #99bbff;
+    --dark-blue: #0041C2;
+    --darkest-basic: #011e41;
+    --dark-basic: #21364e;
+    --mid-basic: #536375;
+    --light-basic: #ced3dc;
+    --clear-basic: #ededed;
+    --clearest-basic: #fafafa;
+}
+
+
+/* global styles */
+h1 {
+    font-family: 'Philosopher', serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    position: absolute;
+    bottom: 0;
+}
+section:not(#contact) h2 {
+    color: var(--accent-blue);
+    font-size: 2.2rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+}
+
+
+section:not(#contact) h3 {
+    color: var(--clear-blue);
+    font-size: 1.6rem;
+    font-family: 'Philosopher', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+p {
+    margin-top: 16px;
+    color: var(--mid-basic);
+}
+
+.hero a, 
+.hobby a, 
+.storia a{
+    color: var(--accent-green);
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+.hero a::before, 
+.hobby a::before, 
+.storia a::before{
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    border-radius: 5px;
+    background-color: var(--accent-green);
+    transition: .3s;
+    width: 0;
+    height: 10%;
+}
+.hero a:hover::before, 
+.hobby a:hover::before, 
+.storia a:hover::before {
+    width: 100%;
+}
+
+
+
+
+
+
+
+/*  hero section */
+.hero {
+    background: var(--clearest-basic);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 10vw;
+}
+
+.hero .text {
+    width: 70vw;
+    max-width: 800px;
+}
+
+.hero .title {
+    position: relative;
+    min-height: 30px;
+}
+
+.title span {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -14px;
+    color: var(--clear-basic);
+}
+
+.img-container{
+    position: relative;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.hero .sardinia {
+    position: relative;
+    height: 100%;
+}
+.hero .sardinia.fill{
+    position: absolute;
+    top: 50%; right: 50%;
+    transform: translate(55%, -48%);
+    
 }
 
 #sardinia-outline path{
     fill: none;
     stroke: var(--accent-green);
     stroke-width: 3px;
+}
+
+
+
+
+
+/* hobby section */
+.hobby {
+    padding: 100px 10vw;
+    background: var(--dark-basic);
+}
+.hobby h2{
+    color: var(--clear-blue);
+}
+.hobby p {
+    color: var(--clearest-basic);
+}
+
+
+
+
+
+/* storia section */
+.storia {
+    padding: 100px 10vw;
+    background: var(--clearest-basic);
+}
+.storia .background {
+    display: flex;
+}
+
+
+.img-tech {
+    width: 40vw;
+    max-width: 800px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.img-travel {
+    float: right;
+    width: 40vw;
+    max-width: 800px;
+    padding: 10px;
+}
+
+
+
+img {
+    width: 50vw;
 }

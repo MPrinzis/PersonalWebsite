@@ -76,7 +76,7 @@ body {
 .page.first h2 em {
     font-size: 1.3rem;
     font-style: normal;
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     white-space: nowrap;
 }
 .page.first h2 em::before {
@@ -98,7 +98,7 @@ body {
     border-radius: 5px;
     background: var(--accent-blue);
     color: var(--clearest-basic);
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.2rem;
     position: relative;
 }
@@ -399,7 +399,7 @@ body {
     margin-top: 3%;
     background: transparent;
     color: var(--clearest-basic);
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     font-size: 1.5rem;
     position: relative;
     transition: all .5s;
@@ -438,7 +438,7 @@ body {
 }
 
 .page.second h2 {
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     font-size: 2rem;
     position: relative;
 }
@@ -659,12 +659,11 @@ body {
     height: 60%;
     padding: 100px 0 40%;
     transform: translateX(50%);
-    /* border: 3px solid blueviolet; */
     z-index: 20;
     transition: all .5s;
 }
 .page.third h2 {
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     font-size: 2rem;
     position: relative;
 }
