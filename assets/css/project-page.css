@@ -1,3 +1,85 @@
-section{
-    padding: 200px 10%;
+:root {
+    --accent-green: #11ee77;
+    --clear-green: #aaffcc;
+    --dark-green: #00d060;
+    --accent-blue: #0055ff;
+    --clear-blue: #99bbff;
+    --dark-blue: #0041C2;
+    --darkest-basic: #011e41;
+    --dark-basic: #21364e;
+    --mid-basic: #536375;
+    --light-basic: #ced3dc;
+    --clear-basic: #ededed;
+    --clearest-basic: #fafafa;
+}
+
+
+/* global styles */
+h1 {
+    font-family: 'Philosopher', serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    position: absolute;
+    bottom: 0;
+}
+section:not(#contact, .hobby) h2 {
+    color: var(--accent-blue);
+    font-size: 2.2rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+}
+
+
+section:not(#contact) h3 {
+    color: var(--clear-blue);
+    font-size: 1.6rem;
+    font-family: 'Philosopher', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 2rem;
+}
+
+section:not(#contact) p{
+    margin-top: 16px;
+    color: var(--mid-basic);
+}
+
+.hero a, 
+.progetti a{
+    color: var(--accent-green);
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+.hero a::before, 
+.progetti a::before{
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    border-radius: 5px;
+    background-color: var(--accent-green);
+    transition: .3s;
+    width: 0;
+    height: 10%;
+}
+.hero a:hover::before, 
+.progetti a:hover::before {
+    width: 100%;
+}
+
+body {
+    background: var(--clearest-basic);
+}
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+}
+
+
+.hero {
+    height: 100vh;
+    background: #536375;
+    display: flex;
 }

@@ -23,7 +23,7 @@ h1 {
     position: absolute;
     bottom: 0;
 }
-section:not(#contact) h2 {
+section:not(#contact, .hobby) h2 {
     color: var(--accent-blue);
     font-size: 2.2rem;
     font-family: 'Philosopher', serif;
@@ -37,10 +37,10 @@ section:not(#contact) h3 {
     font-family: 'Philosopher', serif;
     font-weight: 400;
     text-transform: uppercase;
-    margin-top: 20px;
+    margin-top: 2rem;
 }
 
-p {
+section:not(#contact, .hobby) p{
     margin-top: 16px;
     color: var(--mid-basic);
 }
@@ -71,8 +71,14 @@ p {
     width: 100%;
 }
 
+body {
+    background: var(--clearest-basic);
+}
 
-
+.main-container {
+    height: 100vh;
+    width: 100%;
+}
 
 
 
@@ -82,7 +88,7 @@ p {
     background: var(--clearest-basic);
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 120px 10vw;
 }
@@ -95,6 +101,7 @@ p {
 .hero .title {
     position: relative;
     min-height: 30px;
+    margin-top: 80px;
 }
 
 .title span {
@@ -110,17 +117,18 @@ p {
     position: relative;
     height: 100%;
     margin-left: 10px;
+    transition: .3s;
 }
 
 .hero .sardinia {
     position: relative;
     height: 100%;
+    transition: .5s;
 }
 .hero .sardinia.fill{
     position: absolute;
     top: 50%; right: 50%;
     transform: translate(55%, -48%);
-    
 }
 
 #sardinia-outline path{
@@ -129,6 +137,33 @@ p {
     stroke-width: 3px;
 }
 
+@media (max-width:800px) {
+    .hero {
+        height: min-content;
+        width: 100%;
+    }
+    .hero .text {
+        width: 100%;
+        z-index: 1;
+    }
+    .title span {
+        text-shadow: 5px 5px 20px rgba(83, 99, 117, 0.4);
+    }
+    .img-container {
+        position: absolute;
+        top: 50%; right: 50%;
+        transform: translate(50%, -50%);
+    }   
+    .hero .sardinia.fill {
+        opacity: .1;
+        top: 50%; right: 50%;
+        transform: translate(50%, -40%) scale(.9);
+        max-height: 70%;
+    }      
+    .hero .sardinia.outline {
+        opacity: 0;
+    }   
+}
 
 
 
@@ -140,9 +175,14 @@ p {
 }
 .hobby h2{
     color: var(--clear-blue);
+    font-size: 2.2rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
 }
 .hobby p {
     color: var(--clearest-basic);
+    font-weight: 300;
+    margin-top: 16px;
 }
 
 
@@ -154,26 +194,43 @@ p {
     padding: 100px 10vw;
     background: var(--clearest-basic);
 }
-.storia .background {
-    display: flex;
+
+@media (min-width:800px) {
+    .storia .background {
+        display: flex;
+    }
+    .img-tech {
+        width: 40vw;
+        max-width: 800px;
+        margin-top: 28px;
+        order: -1;
+    }
+    .img-travel {
+        float: right;
+        width: 40vw;
+        max-width: 800px;
+    }
+    .img-studies{
+        float: left;
+        width: 30vw;
+        margin-top: 24px;
+    }
+    .img-designer{
+        float: right;
+        width: 30vw;
+        max-width: 450px;
+    }
 }
-
-
-.img-tech {
-    width: 40vw;
-    max-width: 800px;
-    padding: 10px;
-    margin-top: 10px;
-}
-.img-travel {
-    float: right;
-    width: 40vw;
-    max-width: 800px;
-    padding: 10px;
-}
-
-
-
 img {
-    width: 50vw;
+    width: 100%;
+    padding: 16px;
+    margin-top: 24px;
+}
+
+
+
+
+/* section for make navbar appear again on scroll */
+.dummy-section {
+    height: 150px;
 }

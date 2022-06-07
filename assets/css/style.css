@@ -466,7 +466,7 @@ body {
 
 
 .contact .rigths {
-    border-top: 3px solid var(--clear-blue);
+    border-top: 3px solid var(--light-basic);
     background: var(--dark-blue);
     border-radius: 3px;
     text-align: center;
