@@ -17,7 +17,7 @@
 /* global styles */
 h1 {
     font-family: 'Philosopher', serif;
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw + 1rem, 3rem);
     text-transform: uppercase;
     color: var(--accent-blue);
     position: absolute;
@@ -25,13 +25,13 @@ h1 {
 }
 section:not(#contact, .hobby) h2 {
     color: var(--accent-blue);
-    font-size: 2.2rem;
+    font-size: clamp(1rem, 4vw + 1rem, 2.5rem);
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
 }
 
 
-section:not(#contact) h3 {
+section:not(#contact, .progetti) h3{
     color: var(--clear-blue);
     font-size: 1.6rem;
     font-family: 'Philosopher', serif;
@@ -78,8 +78,196 @@ body {
 }
 
 
+
+/* hero section */
 .hero {
-    height: 100vh;
-    background: #536375;
+    min-height: 80vh;
+    padding: 130px 10vw;
     display: flex;
+}
+
+.hero .text {
+    width: 70vw;
+    max-width: 800px;
+}
+.hero .title {
+    position: relative;
+    min-height: 30px;
+    margin-top: 80px;
+}
+.title span {
+    font-size: clamp(2rem, 10vw + 1rem, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: -14px;
+    color: var(--clear-basic);
+}
+
+.img-computer-work {
+    padding: 16px;
+    margin-right: 20px;
+    width: 30vw;
+    order: -1;
+}
+
+@media (max-width:800px) {
+    .hero {
+        height: min-content;
+        width: 100%;
+        flex-direction: column;
+        padding: 120px 10vw 50px;
+    }
+    .hero .text {
+        width: 100%;
+    }   
+    .img-computer-work {
+        margin: auto;
+        width: 90%;
+        order: 0;
+    }
+    
+}
+
+
+
+
+
+
+
+
+/* about-s2i section */
+.about-s2i {
+    min-height: 80vh;
+    padding: 130px 10vw;
+    background: var(--dark-green);
+}
+
+.about-s2i h2 {
+    color: var(--clearest-basic) !important;
+}
+
+.about-s2i p{
+    color: var(--clear-green) !important;
+}
+
+
+
+
+
+
+/* progetti section */
+.progetti {
+    min-height: 90vh;
+    padding: 130px 10vw;
+}
+
+.card-container {
+    width: 100%;
+    padding: 5%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.card-container .card {
+    width: 100%;
+    min-height: 250px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-blue);
+    display: flex;
+    overflow: hidden;
+    background: var(--accent-blue);
+}
+
+.card .card-img {
+    width: 40%;
+    min-height: 100%;
+    background: var(--light-basic);
+    border-radius: 6px;
+    border: 2px solid var(--accent-blue);
+    overflow: hidden;
+    background-size: cover;
+}
+.card.right .card-img {
+    order: 1;
+}
+
+.card .card-text {
+    width: 60%;
+    height: 100%;
+    background: var(--clear-basic);
+    padding: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--accent-blue);
+}
+
+@media (max-width:800px) {
+    .card-container {
+        padding: 5% 0;
+    }
+    .card-container .card {
+        flex-direction: column;
+    }
+    .card .card-img {
+        width: 100%;
+        min-height: 300px;
+        order: 1;
+    }
+    .card .card-text {
+        width: 100%;
+    }
+}
+
+.card-text h3 {
+    color: var(--accent-blue);
+    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 2.8vw + 1rem, 2rem);
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+}
+
+.card-text h4 {
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-size: clamp(1rem, 2vw + .5rem, 1.2rem);
+}
+.card-text p {
+    font-size: .9rem !important;
+    margin: 8px 0 12px !important;
+}
+
+.card-text a {
+    color: var(--accent-blue);
+    margin-top: 2rem !important;
+    font-family: 'Philosopher', serif;
+}
+.card-text a:hover::before {
+    width: 0;
+}
+.card-text a::after {
+    content: '→';
+    position: relative;
+    padding-left: 10px;
+}
+.card-text a:hover::after {
+    animation: arrow-move .5s forwards;
+}
+@keyframes arrow-move {
+    from {
+        left: 0;
+    }
+    to {
+        left: 16px;
+    }
+}
+
+
+
+
+/* section for make navbar appear again on scroll */
+.dummy-section {
+    height: 150px;
 }

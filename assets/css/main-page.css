@@ -43,26 +43,28 @@ body {
 }
 
 .page.first .text {
+    position: relative;
     display: flex;
     justify-content: start;
     flex-direction: column;
     min-width: 100%;
     height: 100%;
     padding: 140px 0 40%;
+    z-index: 2;
 }
 
 .page.first h1{
-    font-size: 2.5rem;
+    font-size: clamp(2.2rem, 10vw + 1rem, 3.5rem);
     font-weight: 300;
     position: relative;
 }
 .page.first h1 em {
-    font-size: 2.5rem;
+    font-size: clamp(2.2rem, 10vw + 1rem, 3.5rem);
     font-style: normal;
 }
 
 .page.first h1 strong {
-    font-size: 2.5rem;
+    font-size: clamp(2.2rem, 10vw + 1rem, 3.5rem);
     font-weight: 600;
 }
 .page.first h2{
@@ -104,18 +106,10 @@ body {
 }
 .cta-1:hover {
     background: var(--dark-blue);
+    cursor: pointer;
 }
 
 @media (max-width:500px), (max-height:600px){
-    .page.first h1{
-        font-size: 2.2rem;
-    }
-    .page.first h1 em {
-        font-size: 2.2rem;
-    }
-    .page.first h1 strong{
-        font-size: 2.2rem;
-    }
     .page.first h2 {
         font-size: 1rem;
         margin-top: 5%;
@@ -383,6 +377,9 @@ body {
 
 
 
+
+
+
 /* second section start */
 .page.second {
     background: var(--darkest-basic);
@@ -411,7 +408,7 @@ body {
     font-size: 1.8rem;
 }
 .cta-2:hover {
-    color: var(--light-basic);
+cursor: pointer;
 }
 .cta-2:hover::after {
     animation: cta-2-arrow-move .5s forwards;
@@ -454,13 +451,13 @@ body {
     left: 20%;
     max-width: 50%; 
     min-height: 270px; max-height: 60vh; 
+    font-weight: 300;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 14;
     -webkit-box-orient: vertical;
     font-size: 1.2rem;
-    /* border: 2px solid gold;  */
 }
 
 .page.second .paragraph .decoration.square {
@@ -732,7 +729,7 @@ body {
 .page.third .decoration .bubble.blue {
     height: 55vh;    max-height: 600px;
     width: 55vw;     max-width: 500px;
-    background: var(--accent-blue);
+    background: var(--clear-blue);
     bottom: -10vh;
     left: -5vw;
     filter: blur(250px);
