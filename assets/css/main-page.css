@@ -57,6 +57,7 @@ body {
     font-size: clamp(2.2rem, 10vw + 1rem, 3.5rem);
     font-weight: 300;
     position: relative;
+    text-shadow: 2px 2px 4px var(--light-basic);
 }
 .page.first h1 em {
     font-size: clamp(2.2rem, 10vw + 1rem, 3.5rem);
@@ -74,6 +75,7 @@ body {
     font-weight: 400;
     position: relative;
     margin-top: 3%;
+    text-shadow: 2px 2px 10px var(--clear-basic);
 }
 .page.first h2 em {
     font-size: 1.3rem;
@@ -95,7 +97,7 @@ body {
 .cta-1{
     padding: 15px 40px;
     width: fit-content;
-    margin-top: 5%;
+    margin-top: 3%;
     border: none;
     border-radius: 5px;
     background: var(--accent-blue);
@@ -231,15 +233,14 @@ body {
 }
 .hero-decoration .photo {
     height: 100%; 
-    transform: translate(-70px, 5vh);
+    transform: translate(0px, 4vh);
     transition: all .5s;
 }
 .hero-decoration .silohuette {
     position: absolute;
     height: 100%; 
-    transform: translate(-170px, 7vh);
+    transform: translate(-10px, 3vh);
     transition: all .5s;
-    mix-blend-mode: darken;
 }
 .hero-decoration .silohuette path {
     stroke: var(--accent-blue);
@@ -252,10 +253,10 @@ body {
         height: 75vh; 
     }
     .hero-decoration .photo {
-        transform: translate(0px, 5vh);
+        transform: translate(0px, 6vh);
     }
     .hero-decoration .silohuette {
-        transform: translate(-150px, 7vh);
+        transform: translate(-10px, 5vh);
     }
 }
 @media (max-width:720px) {
@@ -263,10 +264,10 @@ body {
         height: 60vh; 
     }
     .hero-decoration .photo {
-        transform: translate(-20px, 5vh);
+        transform: translate(0px, 7vh);
     }
     .hero-decoration .silohuette{
-        transform: translate(-230px, 7vh);
+        transform: translate(-10px, 6vh);
     }
 }
 
