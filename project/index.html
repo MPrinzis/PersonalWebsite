@@ -54,6 +54,33 @@
 
 
 
+      
+    <!-- contact form section-->
+    <div class="contact-form-container">
+      <form action="#">
+          <i class="fa-solid fa-xmark" id="form-close"></i>
+          <span class="title">Contattami</span>
+          <div class="input-box">
+              <p>Nome</p>
+              <input type="name" class="field" id="fullName" placeholder="enter your name" required>
+          </div>
+          <div class="input-box">
+              <p>Email</p>
+              <input type="email" class="field" id="email_id" placeholder="enter your email" required>
+          </div>
+          <div class="input-box">
+              <p>Messaggio</p>
+              <textarea type="text" class="field" id="message" placeholder="enter your message" required></textarea>
+          </div>
+          <div class="submit-btn">
+              <button onclick="SendMail()" class="button"> Invia </button>
+          </div>
+      </form>
+  </div>
+
+
+
+
 
     <!-- pages -->
     <div class="main-container">
@@ -115,6 +142,7 @@
           <div class="card">
             <div class="card-img" 
             style="background-image: url(../assets/img/project-card/Copy_project.png);"></div>
+
             <div class="card-text">
               <h3>Copiwriting</h3>
               <h4>Progetto</h4>
@@ -125,9 +153,12 @@
             </div>            
           </div>
 
-          <div class="card right">
-            <div class="card-img" 
+
+          <div class="card">
+
+            <div class="card-img"
             style="background-image: url(../assets/img/project-card/Graphic_project.png);"></div>
+
             <div class="card-text">
               <h3>Grafica</h3>
               <h4>Progetto</h4>
@@ -142,13 +173,14 @@
           <div class="card">
             <div class="card-img"
             style="background-image: url(../assets/img/project-card/Html_Css_project.png);"></div>
+
             <div class="card-text">
               <h3>HTML & CSS</h3>
               <h4>Progetto</h4>
               <p>Creazione del prooprio sito web, in cui inserire i progetti svolti per presentarsi alle aziende.</p>
               <h4>Competenze</h4>
               <p>Utilizzare il linguaggio HTML unito al CSS per creare pagine web.</p>
-              <a href="https://drive.google.com/file/d/1ZSpeNXxBDU2r7BzGnu-RjVJ0yXxKgXNe/view?usp=sharing">Vai al progetto</a>
+              <a href="https://drive.google.com/file/d/1lx5xDU1mcdW7-OPobvbz2_IrgLPuYxuL/view?usp=sharing">Vai al progetto</a>
             </div> 
           </div>
         </div>
@@ -175,7 +207,9 @@
                 <a href="https://www.behance.net/mauroprinzis"><i class="fa-brands fa-behance"></i></a>
                 <a href="https://dribbble.com/MPrnz"><i class="fa-brands fa-dribbble"></i></a>
             </div>
-            <span class="email"><a href="mailto:mauro.prinzis@gmail.com">mauro.prinzis@gmail.com</a></span>
+            <div class="cta-2 form-open">
+              Scrivimi una mail
+            </div>
         </div>
 
             <div class="decorative square">
@@ -202,6 +236,13 @@
 
 
     <!-- link to js file-->
-    <script src="../assets/js/script.js"></script>
+    
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer type="text/javascript">
+      (function(){
+         emailjs.init("klBrEodZsF8I3eZgw");
+      })();
+    </script>
+    <script defer src="../assets/js/script.js"></script>
   </body>
 </html>

@@ -59,4 +59,28 @@
 
 
 
+// Show Contact form
+let formOpen = document.querySelector('.form-open');
+let contactForm = document.querySelector('.contact-form-container');
+let formClose = document.querySelector('#form-close');
 
+formOpen.addEventListener('click', () => {
+    contactForm.classList.add('active');
+});
+
+formClose.addEventListener('click', () => {
+    contactForm.classList.remove('active');
+});
+
+
+// EmailJS script
+function SendMail() {
+    var params = {
+        from_name : document.getElementById("fullName").value,
+        email_id : document.getElementById("email_id").value,
+        message : document.getElementById("message").value
+    }
+    emailjs.send("service_kfetclr", "template_wxafq4s", params).then(function (res) {
+        alert("Email inviata!" + res.status);
+    })
+}

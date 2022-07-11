@@ -183,13 +183,14 @@ body {
 .card .card-img {
     width: 40%;
     min-height: 100%;
+    height: inherit;
     background: var(--light-basic);
     border-radius: 6px;
     border: 2px solid var(--accent-blue);
-    overflow: hidden;
     background-size: cover;
 }
-.card.right .card-img {
+
+.card:nth-of-type(even) .card-img {
     order: 1;
 }
 

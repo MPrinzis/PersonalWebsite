@@ -13,6 +13,25 @@
     --clearest-basic: #fafafa;
 }
 
+/* personalized scrollbar */
+::-webkit-scrollbar {
+    width: 1vw;
+    max-width: 20px;
+    min-width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--clear-basic);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent-blue);
+    border: 1px solid var(--clear-basic);
+    border-radius: 1vw;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-blue);
+}
+
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -339,6 +358,167 @@ header .navbar {
 }
 
 /* end goTop sticky button */
+
+
+
+
+
+
+
+
+
+
+
+/* contact form */
+.contact-form-container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: rgba(206, 211, 220, 0.7);
+    margin: auto;
+    padding: 10% 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-300%);
+    z-index: 150;
+    transition: 0.5s ease;
+}
+.contact-form-container.active {
+    transform: translateY(0);
+}
+
+.contact-form-container form {
+    position: absolute;
+    background: var(--clear-basic);
+    padding: 3%;
+    min-width: 400px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contact-form-container form i {
+    position: absolute;
+    top: 3%;
+    right: 4%;
+    font-size: 1.3rem;
+    color: var(--clear-blue);
+}
+.contact-form-container form i:hover,
+.contact-form-container form i:focus {
+    color: var(--accent-blue);
+}
+
+.contact-form-container .input-box {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.contact-form-container .title {
+    font-weight: 900;
+    font-size: 1.3rem;
+    font-family: 'Philosopher', serif;
+    color: var(--dark-blue);
+}
+
+.contact-form-container .input-box p {
+    color: var(--accent-blue);
+    font-size: .8rem;
+    font-weight: 600;
+    padding-left: 4%;
+}
+
+.contact-form-container .input-box .field {
+    margin-top: 2%;
+    color: var(--accent-blue);
+    font-size: .8rem;
+    outline: none;
+    background: var(--clearest-basic);
+    border: 2px solid var(--clearest-basic);
+    border-radius: 5px;
+    padding: 2% 4%;
+    width: 100%;
+}
+.contact-form-container .input-box .field::placeholder {
+    font-size: .8rem;
+    color: var(--clear-blue);
+}
+.contact-form-container .input-box .field:hover{
+    border: 2px solid var(--clear-blue);
+}
+.contact-form-container .input-box .field:focus{
+    border: 2px solid var(--accent-blue);
+}
+.contact-form-container #message {
+    min-height: 100px;
+    max-height: 250px;
+    resize: vertical;
+}
+.contact-form-container textarea::-webkit-resizer {
+    border-right: 3px inset var(--light-basic);
+    border-bottom: 3px inset var(--light-basic);
+    border-radius: 5px 3px;
+}
+
+
+.contact-form-container .submit-btn {
+    margin-top: 10%;
+    width: 100%;
+}
+
+.contact-form-container .submit-btn .button {
+    width: 100%;
+    padding: 2%;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-green);
+    color: var(--clearest-basic);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.contact-form-container .submit-btn .button:hover, 
+.contact-form-container .submit-btn .button:focus {
+    background-color: var(--dark-green);
+}
+
+
+/* contact form responsivness */
+@media (max-width:400px) {
+    .contact-form-container form {
+        min-width: 100%;
+    }
+    .contact-form-container {
+        background: var(--clear-basic);
+    }
+}
+
+.cta-2 {
+    padding: 15px 40px;
+    width: fit-content;
+    margin-top: 3%;
+    border-radius: 5px;
+    border: 2px solid var(--light-basic);
+    font-weight: 500;
+    transition: .3s ease;
+    cursor: pointer;
+}
+
+.cta-2:hover {
+    background: var(--light-basic);
+    color: var(--dark-blue);
+}
+
+
+
+
+
+
+
+
 
 
 
